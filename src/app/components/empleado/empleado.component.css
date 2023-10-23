@@ -1,0 +1,45 @@
+body{
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    height: 100vh;
+    background-image: url(../../../assets/black-low-poly-monochrome-pattern-wallpaper-preview.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
+    
+}
+.titulo{
+    float: right;
+    
+}
+
+
+.cabecera{
+    display:block; 
+    font-family: 'Rubik', sans-serif;
+    background-color: #ceb8d1;
+    color: white;
+    background: #000000;
+    background: linear-gradient(138deg,#000000 0%, #727a72 80%);
+    background: -webkit-linear-gradient(138deg,#000000 0%, #727a72 80%);
+    background: -moz-linear-gradient(138deg,#000000 0%, #727a72 80%);
+    font-size: 30px;
+}
+
+table{
+    margin-top: 20px;
+    width: fit-content;
+    border: 5px inset black;
+}
+header{
+
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-family: 'Rubik', sans-serif;
+    background-color: rgb(58, 163, 132);
+    border: 3px inset #9ec29c;
+}

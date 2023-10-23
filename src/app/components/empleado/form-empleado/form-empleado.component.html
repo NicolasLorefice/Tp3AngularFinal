@@ -1,0 +1,92 @@
+<body>
+  <table>
+    <tr>
+      <td>
+        <h4 class="formularioIngreso">Ingreso de Datos</h4>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <form [formGroup]='empleadoForm'>
+          <div class="form-control">
+            <label for="nroDocumento">Numero de documento</label>
+            <input type="text" id="nroDocumento" formControlName="nroDocumento" class="form-control" placeholder="Numero de documento">
+            <div *ngIf="empleadoForm.get('nroDocumento')?.hasError('required') && empleadoForm.get('nroDocumento')?.touched">
+              <div class="alert alert-danger">El número de documento es obligatorio.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('nroDocumento')?.hasError('max') && empleadoForm.get('nroDocumento')?.touched">
+              <div class="alert alert-danger">El número de documento debe ser menor o igual a 99999999.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('nroDocumento')?.hasError('min') && empleadoForm.get('nroDocumento')?.touched">
+              <div class="alert alert-danger">El número de documento debe ser mayor o igual a 1000000.</div>
+            </div>
+          </div>
+          
+          <div class="form-control">
+            <label for="nombre">Nombre</label>
+            <input type="text" id="nombre" formControlName="nombre" class="form-control" placeholder="Nombre">
+            <div *ngIf="empleadoForm.get('nombre')?.hasError('required') && empleadoForm.get('nombre')?.touched">
+              <div class="alert alert-danger">El nombre es obligatorio.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('nombre')?.hasError('pattern') && empleadoForm.get('nombre')?.touched">
+              <div class="alert alert-danger">El nombre solo puede contener letras y espacios.</div>
+            </div>
+          </div>
+          
+          <div class="form-control">
+            <label for="apellido">Apellido</label>
+            <input type="text" id="apellido" formControlName="apellido" class="form-control" placeholder="Apellido">
+            <div *ngIf="empleadoForm.get('apellido')?.hasError('required') && empleadoForm.get('apellido')?.touched">
+              <div class="alert alert-danger">El apellido es obligatorio.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('apellido')?.hasError('pattern') && empleadoForm.get('apellido')?.touched">
+              <div class="alert alert-danger">El apellido solo puede contener letras y espacios.</div>
+            </div>
+          </div>
+          
+          <div class="form-control">
+            <label for="email">Correo electrónico</label>
+            <input type="email" id="email" formControlName="email" class="form-control" placeholder="Correo electrónico">
+            <div *ngIf="empleadoForm.get('email')?.hasError('required') && empleadoForm.get('email')?.touched">
+              <div class="alert alert-danger">El correo electrónico es obligatorio.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('email')?.hasError('email') && empleadoForm.get('email')?.touched">
+              <div class="alert alert-danger">El formato del correo electrónico no es válido.</div>
+            </div>
+          </div>
+          
+          <div class="form-control">
+            <label for="fechaNacimiento">Fecha de nacimiento</label>
+            <input type="date" id="fechaNacimiento" formControlName="fechaNacimiento" class="form-control">
+            <div *ngIf="empleadoForm.get('fechaNacimiento')?.hasError('required') && empleadoForm.get('fechaNacimiento')?.touched">
+              <div class="alert alert-danger">La fecha de nacimiento es obligatoria.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('fechaNacimiento')?.hasError('pattern') && empleadoForm.get('fechaNacimiento')?.touched">
+              <div class="alert alert-danger">La fecha de nacimiento debe tener el formato YYYY-MM-DD.</div>
+            </div>
+          </div>
+          
+          <div class="form-control">
+            <label for="fechaIngreso">Fecha de ingreso</label>
+            <input type="date" id="fechaIngreso" formControlName="fechaIngreso" class="form-control" placeholder="Fecha de ingreso">
+            <div *ngIf="empleadoForm.get('fechaIngreso')?.hasError('required') && empleadoForm.get('fechaIngreso')?.touched">
+              <div class="alert alert-danger">La fecha de ingreso es obligatoria.</div>
+            </div>
+            <div *ngIf="empleadoForm.get('fechaIngreso')?.hasError('pattern') && empleadoForm.get('fechaIngreso')?.touched">
+              <div class="alert alert-danger">La fecha de ingreso debe tener el formato YYYY-MM-DD.</div>
+            </div>
+          </div>
+        </form>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <div class="botonera">
+          <button type="button" class="btn btn-outline-light" role="button" (click)="create()">Registrar</button>
+          <button type="button" class="btn btn-outline-light" role="button" (click)="actualizar()">Modificar</button>
+          <button type="button" class="btn btn-outline-light" role="button" routerLink="/home">Home</button>
+        </div>
+      </td>
+    </tr>
+  </table>
+</body>
